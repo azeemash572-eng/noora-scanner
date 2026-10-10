@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>نُورا سکینر</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<meta name="theme-color" content="#0e7c7b">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="نُورا سکینر">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header><h1 id="title">نُورا سکینر</h1><button id="langBtn" class="ghost">EN</button></header>
+<main>
+  <div class="actions">
+    <button id="scanBtn" class="primary" data-i18n="scan">اسکین کریں</button>
+    <button id="manualBtn" data-i18n="manual">دستی اندراج</button>
+  </div>
+  <div class="actions">
+    <button id="exportBtn" data-i18n="export">CSV ایکسپورٹ</button>
+    <span id="count" class="muted"></span>
+  </div>
+  <ul id="list"></ul>
+  <p id="empty" class="muted center" data-i18n="empty">ابھی کوئی اندراج نہیں۔ اسکین کریں۔</p>
+</main>
+
+<div id="scanner" hidden>
+  <video id="video" playsinline muted autoplay></video>
+  <div class="frame"></div>
+  <p id="scanMsg" class="scanmsg"></p>
+  <button id="scanClose" class="primary" data-i18n="cancel">منسوخ</button>
+</div>
+
+<dialog id="dlg">
+  <form method="dialog" id="form">
+    <h2 id="dlgTitle"></h2>
+    <label><span data-i18n="barcode">بارکوڈ</span><input id="fBarcode" inputmode="text" autocomplete="off" dir="ltr" required></label>
+    <label><span data-i18n="qty">مقدار</span><input id="fQty" type="number" inputmode="numeric" min="0" step="1" value="1" required dir="ltr"></label>
+    <label><span data-i18n="model">ماڈل نمبر</span><input id="fModel" autocomplete="off" dir="ltr"></label>
+    <p id="dupMsg" class="warn" hidden></p>
+    <div class="actions">
+      <button type="submit" id="saveBtn" class="primary" data-i18n="save">محفوظ کریں</button>
+      <button type="button" id="addQtyBtn" hidden data-i18n="addqty">مقدار جمع کریں</button>
+      <button type="button" id="cancelBtn" data-i18n="cancel">منسوخ</button>
+    </div>
+  </form>
+</dialog>
+<div id="toast" hidden></div>
+<script src="zxing.min.js"></script>
+<script src="store.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
