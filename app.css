@@ -29,3 +29,12 @@ input{width:100%;font:inherit;font-size:18px;padding:10px;border:1px solid #9bb;
 .scanmsg{position:absolute;top:calc(env(safe-area-inset-top) + 16px);color:#fff;background:#0008;padding:6px 12px;border-radius:10px;margin:0}
 #scanClose{position:absolute;bottom:calc(env(safe-area-inset-bottom) + 24px)}
 #toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:10px 16px;border-radius:12px;z-index:30}
+label.btn{flex:1;display:block;margin:0;text-align:center;padding:12px 16px;border-radius:12px;border:1px solid var(--teal);background:#fff;color:var(--teal);min-height:46px}
+label.btn span{display:inline;margin:0;font-size:inherit;color:inherit}
+label.btn.primary{background:var(--teal);color:#fff}
+#pdfList li{display:flex;align-items:center;gap:8px;padding:8px}
+#pdfList img{width:56px;height:56px;object-fit:cover;border-radius:8px;background:#eee}
+#pdfList b{flex:1}
+#pdfList button{min-height:40px;min-width:44px;padding:4px;flex:none}
+#pdfList button:disabled,#pdfMake:disabled{opacity:.4}
+#pdfDlg ul{max-height:50vh;overflow:auto}

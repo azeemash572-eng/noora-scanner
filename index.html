@@ -25,6 +25,7 @@
     <button id="exportBtn" data-i18n="export">CSV ایکسپورٹ</button>
     <span id="count" class="muted"></span>
   </div>
+  <div class="actions"><button id="pdfBtn" data-pi="pdf">PDF بنائیں</button></div>
   <ul id="list"></ul>
   <p id="empty" class="muted center" data-i18n="empty">ابھی کوئی اندراج نہیں۔ اسکین کریں۔</p>
 </main>
@@ -50,9 +51,20 @@
     </div>
   </form>
 </dialog>
+<dialog id="pdfDlg">
+  <h2 data-pi="pdfTitle">تصاویر سے PDF</h2>
+  <div class="actions">
+    <label class="btn primary"><span data-pi="pick">تصاویر منتخب کریں</span><input id="pdfFiles" type="file" accept="image/*" multiple hidden></label>
+    <label class="btn"><span data-pi="cam">کیمرا سے لیں</span><input id="pdfCam" type="file" accept="image/*" capture="environment" hidden></label>
+  </div>
+  <p class="muted"><span id="pdfNone" data-pi="none"></span> <span id="pdfCount"></span></p>
+  <ul id="pdfList"></ul>
+  <div class="actions"><button id="pdfMake" class="primary" disabled></button><button id="pdfClose" data-pi="close">بند کریں</button></div>
+</dialog>
 <div id="toast" hidden></div>
 <script src="zxing.min.js"></script>
 <script src="store.js"></script>
 <script src="app.js"></script>
+<script src="pdf.js"></script>
 </body>
 </html>
